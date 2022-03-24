@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+<meta name="referrer" content="origin">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lottery Fun</title>
+<link href="css/multiColumnTemplate.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="primary_header">
+      <h1 class="title"> Lottery Fun - Javascript 310 Final Project</h1>
+    </div>
+  </header>
+  <div class="row">
+    <div class="column_half"  >
+      <h2>Time till next Powerball drawing</h2>
+      <h1 id="powerball_countdown"></h1>
+      <div>
+        <form id="pbnum-plays" name="pbform" method="post">
+          <div>
+            <label for="pbnumber">Number of Powerball plays you would like:</label>
+            <input type="number" name="pbnumber" id="pbnumber" min="1" max="30" />
+          </div>
+          <div>
+            <input type="submit" name="pbsubmit" id="pbsubmit" value="Get plays" />
+          </div>
+        </form>
+        <div id="pbPlays">
+          <table id="pbPlaysTab">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+              <th>Power Ball</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+    </div>
+    <div class="column_half">
+      <h2>Time till next Mega Millions drawing</h2>
+      <h1 id= "megamillions_countdown"></h1>
+      <div>
+        <form id="mmnum-plays" name="mmform" method="post">
+          <div>
+            <label for="mmnumber">Number of Mega Millions plays you would like:</label>
+            <input type="number" name="mmnumber" id="mmnumber" min="1" max="30" />
+          </div>
+          <div>
+            <input type="submit" name="mmsubmit" id="mmsubmit" value="Get plays" />
+          </div>
+        </form>
+      </div>
+      <div id="mmPlays">
+        <table id="mmPlaysTab">
+          <tr>
+            <th width="50px">B1</th>
+            <th width="50px">B2</th>
+            <th width="50px">B3</th>
+            <th width="50px">B4</th>
+            <th width="50px">B5</th>
+            <th>Mega Ball</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row blockDisplay">
+    <div class = "column_half">
+      <div class="left_half">
+        <h2 class="column_title">Powerball Stats</h2>
+      </div>
+      <div id="pbstats" >
+        <div>
+          <h3 id="pb-most-freq-p">Most Frequently drawn balls</h3>
+          <table id="pb-most-freq-balls">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <h3 id="pb-most-freq-bb-p">Most Frequently drawn Power Balls</h3>
+          <table id="pb-most-freq-bonusballs">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <h3 id="pb-avg-by-pos-p">Average by position</h3>
+          <table id="pb-avg-by-pos">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+              <th>Power Ball</th>				
+            </tr>
+          </table>
+        </div>	
+        <div>
+          <h3 id="pb-median-by-pos-p">Median by position</h3>
+          <table id="pb-median-by-pos">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+              <th>Power Ball</th>				
+            </tr>
+          </table>
+        </div>	
+        <div>
+          <h3 id="pb-recent-p">Recent drawings</h3>
+          <table id="pb-recent">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+              <th>Power Ball</th>				
+            </tr>
+          </table>
+        </div>			  
+      </div>
+    </div>
+    <div class="column_half">
+      <div class="right_half">
+        <h2 class="column_title">Mega Millions Stats</h2>
+      </div>
+      <div id="mmstats" >
+        <div>
+          <h3 id="mm-most-freq-p">Most Frequently drawn balls</h3>
+          <table id="mm-most-freq-balls">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <h3 id="mm-most-freq-bb-p">Most Frequently drawn MegaBalls</h3>
+          <table id="mm-most-freq-bonusballs">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <h3 id="mm-avg-by-pos-p">Average by position</h3>
+          <table id="mm-avg-by-pos">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+              <th>Mega Ball</th>				
+            </tr>
+          </table>
+        </div>	
+        <div>
+          <h3 id="mm-median-by-pos-p">Median by position</h3>
+          <table id="mm-median-by-pos">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+              <th>Mega Ball</th>				
+            </tr>
+          </table>
+        </div>	
+        <div>
+          <h3 id="mm-recent-p">Recent drawings</h3>
+          <table id="mm-recent">
+            <tr>
+              <th width="50px">B1</th>
+              <th width="50px">B2</th>
+              <th width="50px">B3</th>
+              <th width="50px">B4</th>
+              <th width="50px">B5</th>
+              <th>Mega Ball</th>				
+            </tr>
+          </table>
+        </div>			  
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/domain.js"></script> 
+<script src="js/lotteryui.js"></script>
+</body>
+</html>
